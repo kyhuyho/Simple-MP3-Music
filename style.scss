@@ -1,0 +1,146 @@
+html {
+  font-size: 62.5%;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  font-size: 1.6rem;
+  line-height: 1;
+  background-color: #423b42;
+}
+.player {
+  padding: 20px;
+  max-width: 500px;
+  margin: 5rem auto;
+}
+.player-box {
+  background-color: white;
+  padding: 20px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.player-media {
+  width: 250px;
+  height: 250px;
+  margin-bottom: 30px;
+  position: relative;
+}
+.player-media::before {
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background-color: white;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+.player-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+.player-image.is-playing {
+  animation: playerImageRotate 10s forwards infinite linear;
+}
+@keyframes playerImageRotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.player-progress {
+  width: 100%;
+}
+.player-number {
+  margin-top: 25px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 2rem;
+  font-weight: bold;
+}
+.player-tool {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  position: relative;
+}
+.player-play {
+  width: 60px;
+  height: 60px;
+  border: 3px solid white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  margin: 0 20px;
+  transition: all 0.3s ease;
+}
+.player-play:hover {
+  border-color: #9f55ce;
+  color: #9f55ce;
+}
+.player-random,
+.player-prev,
+.player-next {
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.player-random {
+  position: absolute;
+  left: 2rem;
+}
+.player-random:hover,
+.player-next:hover,
+.player-prev:hover {
+  color: #9f55ce;
+}
+.bar {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 3px;
+  background: #d3d3d3;
+  outline: none;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+  cursor: pointer;
+}
+.bar::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 100rem;
+  background-color: #46121e;
+  box-shadow: 0 0 0 5px white, 0 0 0 6px #ccc;
+}
+.bar::-moz-range-thumb {
+  cursor: pointer;
+  width: 10px;
+  height: 10px;
+  border-radius: 100rem;
+  background-color: #46121e;
+  box-shadow: 0 0 0 5px white, 0 0 0 6px #ccc;
+}
